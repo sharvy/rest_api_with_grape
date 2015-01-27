@@ -1,1 +1,1 @@
-# rest_api_with_grape
+# Rails RESTful API with GRAPE
