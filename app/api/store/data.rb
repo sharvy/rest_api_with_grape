@@ -19,6 +19,16 @@ module Store
       post do
         StoreDatum.create!(params[:store_datum])
       end
+
+      desc 'Delete a store'
+      params do
+        requires :store_datum, type: Hash do
+          requires :id, type: String
+        end
+      end
+      delete ':id' do
+        StoreDatum.find(params[:store_datum]['id']).destroy!
+      end
     end
   end
 end
