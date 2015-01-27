@@ -17,3 +17,4 @@ group :development, :test do
 end
 
 gem 'grape'
+gem 'hashie_rails'
