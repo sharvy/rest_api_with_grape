@@ -29,6 +29,21 @@ module Store
       delete ':id' do
         StoreDatum.find(params[:store_datum]['id']).destroy!
       end
+
+      desc 'Update a store information'
+      params do
+        requires :store_datum, type: Hash do
+          requires :id, type: String
+          optional :name, type: String
+          optional :description, type: String
+          optional :category, type: String
+          optional :url, type: String
+        end
+      end
+      put ':id' do
+        StoreDatum.find(params[:store_datum]['id'])
+        .update_attributes!(params[:store_datum])
+      end
     end
   end
 end
