@@ -10,11 +10,22 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'autoprefixer-rails'
+gem 'devise', '~> 3.4.1'
+gem 'friendly_id', '~> 5.1.0'
+gem 'yard'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
 
+group :production do
+  gem 'rails_12factor'
+  gem 'unicorn'
+end
+
 gem 'grape'
 gem 'hashie_rails'
+
